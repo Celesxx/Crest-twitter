@@ -1,0 +1,48 @@
+.statistic
+{
+    height: 100%;
+    width: 100%;
+}
+
+.statistic-title
+{
+    font-size: 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+    
+}
+
+.statistic-description
+{
+    font-size: 19px;
+    color:rgba(139, 139, 139, 0.85);
+    width: 28%;
+    text-align: center;
+}   
+
+.statistic-card-core
+{
+    width: 50%;
+    background: #1A1B23;
+    border-radius: 25px;
+}
+
+.statistic-card
+{
+    width: 90%;
+    height: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid #2B2C3B;
+    margin-bottom: 2%;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.statistic-card > * 
+{
+    flex: 1;
+}
+
+#token-name, #token-value { color: white; }
+#token-items, #token-holders { color: #B982FF; }
+#token-percent { color: #0DBB7C}

@@ -1,0 +1,97 @@
+@media only screen and (max-width: 1919px) 
+{
+  .home-body-card-winner 
+  { 
+    width: 70%;
+    height: 45%;
+    justify-content: space-around;
+  }
+  .home-title-winner { font-size: 55px; }
+  .home-description-winner { font-size: 30px; }
+  .home-description2 { font-size: 22px; }
+
+  .home-body-card 
+  { 
+    width: 70%;
+    height: 70%;
+    justify-content: space-around;
+  }
+  .home-title{ font-size: 55px; height: auto; }
+  .home-description{ font-size: 30px; height: auto; }
+  .home-button
+  {
+    height: 30%;
+    width: 50%;
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 700px) 
+{
+  .home-body-card-winner 
+  { 
+    width: 95%;
+    height: 45%;
+    justify-content: space-around;
+  }
+  .home-title-winner { font-size: 30px; }
+  .home-description-winner { font-size: 25px; }
+  .home-description2 { font-size: 20px; }
+
+  .home-body-card 
+  { 
+    width: 95%;
+    height: 40%;
+    justify-content: space-between;
+  }
+  .home-title{ font-size: 30px; height: auto; }
+  .home-description{ font-size: 20px; height: auto; }
+  .home-button
+  {
+    height: 50%;
+    width: 70%;
+    font-size: 15px;
+  }
+}
+
+
+
+@media only screen and (max-width: 360px) 
+{
+  .home-body-card-winner 
+  { 
+    width: 95%;
+    height: 45%;
+    justify-content: space-around;
+  }
+  .home-title-winner { font-size: 18px; }
+  .home-description-winner { font-size: 16px; }
+  .home-description2 { font-size: 12px; }
+
+  .home-body-card 
+  { 
+    width: 95%;
+    height: 40%;
+    justify-content: space-between;
+  }
+  .home-title{ font-size: 21px; height: auto; }
+  .home-description{ font-size: 15px; height: auto; }
+  .home-button
+  {
+    height: 50%;
+    width: 70%;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+

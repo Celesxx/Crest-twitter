@@ -1,0 +1,13 @@
+@media only screen and (max-width: 660px) 
+{
+  .navbar-logo-core { height: 30%; width: auto;}
+
+  .logo-crest { height: 100%; width: auto; }
+  .title-crest { width: 0; }
+  .navbar-title { position: absolute; width: 0;}
+  .navbar-button{ width: 70%;}
+  .dapp-button{ width: 70%;}
+  .dapp-button { font-size: 12px }
+  .navbar-address-core{ width: 100%;}
+  .navbar-address{ font-size: 12px; }
+}

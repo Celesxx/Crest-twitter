@@ -1,0 +1,218 @@
+#root
+{
+  height: 100vh;
+  width: 100%;
+  background: black;
+  color: white;
+  
+}
+
+.home 
+{
+  height: 100%;
+  width: 100%;
+  background: black;
+}
+
+.home-body 
+{
+  position: relative;
+  z-index: 10;
+  height: 90%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-body-card
+{
+  height: 50%;
+  width: 50%;
+  align-items: center;
+  align-content: center;
+  color: white;
+  font-family: "Infos";
+  justify-content: center;
+}
+
+/* .home-body-card > * 
+{
+    flex: 1;
+}  */
+
+.home-title-core
+{
+  height: 25%;
+  width: 60%;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25px;
+} 
+
+.home-title
+{
+  height: 50%;
+  width: 90%;
+  font-size: 60px;
+  text-align: start;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+
+.home-description
+{
+  height: 10%;
+  width: 80%;
+  font-size: 30px;
+  text-align: start;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+
+}
+
+.home-button-core
+{
+  height: 30%;
+  width: 80%; 
+}
+.home-button 
+{ 
+  height: 80%;
+  width: 40%;
+  border: 0px !important;
+  background: rgba(0,0,0,0.0) !important;
+  border: 0;
+  border-left: 3px solid rgb(1, 194, 222) !important;
+  border-right: 3px solid rgba(243, 255, 254, 0.8) !important;
+  background-image: linear-gradient(90deg, rgb(1, 194, 222), rgb(243, 255, 254)),linear-gradient(90deg, rgb(1, 194, 222), #F3FFFE) !important;
+  background-size: 100% 2px !important;
+  background-position: 0 0, 0 100% !important;
+  background-repeat: no-repeat !important;
+  border-radius: 22px !important;
+  color: white;
+  align-content: center;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Infos";
+  padding: 0;
+  margin: 0;
+}
+
+
+a {
+  all: unset;
+}
+
+.home-button:hover
+{
+  transform: scale(0.95, 0.95);
+}
+
+.button-input
+{
+  width: 20%;
+  background: linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%);
+  border-radius: 10px !important;
+}
+
+
+.home-sphere
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0; 
+  z-index: 8;
+  overflow: hidden;
+}
+
+.sphere-img
+{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+.home-body-card-winner
+{
+  height: 80%;
+  width: 60%;
+  align-items: center;
+  align-content: center;
+  color: white;
+  font-family: "Infos";
+  justify-content: space-evenly;
+}
+
+.home-title-winner
+{
+  margin: 0;
+  font-size: 90px;
+  line-height: 99.5%;
+  letter-spacing: 4.5px;
+  text-align: start;
+  font-weight: 800;
+  text-align: center;
+  margin: 0;
+}
+
+.gradient-crest
+{
+  background: -webkit-linear-gradient(45deg, #FA00FF, #0047FF, #00FFF0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-orange
+{
+  background: -webkit-linear-gradient(45deg, #FFB800, #FF2E00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-winner-bar-large
+{
+  width: 50%;
+  height: 0px;
+  border: 1.5px solid #FFFFFF;  
+}
+
+.home-winner-bar-short
+{
+  width: 25%;
+  height: 0px;
+  border: 1px solid #FFFFFF;  
+}
+
+.home-description-winner
+{
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 64px;
+  line-height: 99.5%;
+  letter-spacing: 4.5px;
+  text-align: start;
+  font-weight: 800;
+  text-align: center;
+}
+
+.home-description2
+{
+  color: #ACACAC;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 32px;
+  line-height: 99.5%;
+  letter-spacing: 4.5px;
+  text-align: start;
+  font-weight: 800;
+  text-align: center;
+}
