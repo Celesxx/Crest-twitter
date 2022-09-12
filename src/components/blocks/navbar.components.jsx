@@ -48,7 +48,19 @@ class Navbar extends React.Component
     if (window.ethereum) { this.state.isMetamaskSupported = true }
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) 
+  {
+    if (prevProps.address !== this.props.address)
+    { 
+      this.state.address = this.props.address 
+      this.forceUpdate();
 
+    }else if(prevProps.tweeted !== this.props.tweeted)
+    {   
+      this.state.tweeted = this.props.tweeted 
+      this.forceUpdate();
+    }
+  }
 
   connectWallet = async () => 
   {

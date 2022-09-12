@@ -7,6 +7,13 @@ import Navbar from "components/blocks/navbar.components.jsx"
 import Sphere from "assets/img/sphere.svg"
 import { LoginActions } from 'store/actions/login.actions.js'
 import { connect } from 'react-redux'
+import Web3 from 'web3'
+import { ethers } from 'ethers'
+import Notiflix from 'notiflix';
+import Web3Modal from 'web3modal'
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import network from 'contract/network.contract.js'
+import AxiosRequest from 'request/axios.request.js' 
 
 const MapStateToProps = (state) => 
 {
@@ -29,12 +36,15 @@ class Index extends React.Component
       {
         address: this.props.address,
         tweeted : this.props.tweeted,
+        isMetamaskSupported: false,
         textTweet: "Just submitted my WL request to @playCrest, let's !pray 🤲 $CREST"
       };
-      console.log("state : ", this.state.address)
-      console.log("tweeted : ", this.state.tweeted)
   }
 
+  async UNSAFE_componentWillMount() 
+  {
+    if (window.ethereum) { this.state.isMetamaskSupported = true }
+  }
 
   componentDidUpdate(prevProps, prevState, snapshot) 
   {
@@ -57,6 +67,44 @@ class Index extends React.Component
     this.props.loginAction({tweeted: true, action: 'tweeted'})
   }
 
+
+
+  connectWallet = async () => 
+  {
+      if (this.state.isMetamaskSupported) 
+      {
+        const providerOptions = { walletconnect: { package: WalletConnectProvider, options: { rpc: { [network.chainId]: network.rpcUrls[0] } } } }
+        let web3Modal = new Web3Modal( { cacheProvider: false, providerOptions, disableInjectedProvider: false, theme: "dark" })
+        const instance = await web3Modal.connect()
+        const newProvider = new ethers.providers.Web3Provider(instance);
+        const chainId = (await newProvider.getNetwork()).chainId
+
+        if (chainId == network.chainId) 
+        {
+          let axiosRequest = new AxiosRequest()
+          this.state.provider = newProvider
+          this.state.address = await newProvider.getSigner().getAddress()
+          this.state.isLoggedIn = true
+
+          await axiosRequest.sendAddress(this.state.address)
+          this.props.loginAction({address : this.state.address, action: "address"})
+          
+
+        }else 
+        {
+          Notiflix.Notify.failure(
+          "Required Network - " + network.chainName, { timeout: 2500, width: '300px', position: 'right-top' });
+        }
+
+      }else if (window.web3) window.web3 = new Web3(window.web3.currentProvider)
+      else window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
+
+      
+      this.forceUpdate();
+
+  }
+
+
   render()
     {
       return(
@@ -75,10 +123,9 @@ class Index extends React.Component
                     <p className="home-description">CONNECT WALLET {"->"} CLICK ON BUTTON {"->"} RETWEET</p>
                     <div className="home-button-core flex row center">
                     {
-                      this.state.address !== null &&
-                      (
-                        <button className="home-button flex row center" onClick={() => this.sendMessageTwitter()}>Access to the whitelist</button>
-                      )
+                      this.state.address !== null 
+                      ? <button className="home-button flex row center" onClick={() => this.sendMessageTwitter()}>Access to the whitelist</button>
+                      :<button className="home-button flex row center" onClick={() => this.connectWallet()}> <p>Connect Wallet</p> </button>
                     }
                     </div>
                   </div>
