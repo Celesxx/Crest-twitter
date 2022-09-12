@@ -18,13 +18,22 @@
 
 .navbar-logo-core
 {
-  width: 10%;
+  width: auto;
+  height: 60%;
   margin-left: 5%
 }
 .navbar-logo
 { 
   width: 100%; 
-
+  height: 100%;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+.logo-crest
+{
+  height: 100%;
+  width: auto;
 }
 
 
@@ -46,7 +55,7 @@
 {
   font-style: normal;
   font-weight: 800;
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .button:hover{ transform: scale(0.95, 0.95); }
@@ -141,4 +150,9 @@
 .walletconnect-qrcode__text
 {
   color: rgb(181 181 181 / 60%) !important;
+}
+
+.walletconnect-qrcode__image
+{
+  width: 80% !important;
 }

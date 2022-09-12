@@ -1,3 +1,4 @@
+import 'assets/animation/keyframes.assets.css'
 import 'assets/pages/index.assets.css';
 import 'assets/pages/mobile/index.assets.css';
 import 'assets/global.assets.css';

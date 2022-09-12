@@ -55,8 +55,7 @@ class Navbar extends React.Component
       if (this.state.isMetamaskSupported) 
       {
         const providerOptions = { walletconnect: { package: WalletConnectProvider, options: { rpc: { [network.chainId]: network.rpcUrls[0] } } } }
-        let web3Modal = new Web3Modal( { cacheProvider: true, providerOptions, disableInjectedProvider: false, theme: "dark" })
-
+        let web3Modal = new Web3Modal( { cacheProvider: false, providerOptions, disableInjectedProvider: false, theme: "dark" })
         const instance = await web3Modal.connect()
         const newProvider = new ethers.providers.Web3Provider(instance);
         const chainId = (await newProvider.getNetwork()).chainId
@@ -70,6 +69,7 @@ class Navbar extends React.Component
 
           await axiosRequest.sendAddress(this.state.address)
           this.props.loginAction({address : this.state.address, action: "address"})
+          
 
         }else 
         {
@@ -80,6 +80,7 @@ class Navbar extends React.Component
       }else if (window.web3) window.web3 = new Web3(window.web3.currentProvider)
       else window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
 
+      
       this.forceUpdate();
 
   }

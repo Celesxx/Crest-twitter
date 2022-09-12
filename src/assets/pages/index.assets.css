@@ -12,6 +12,8 @@
   height: 100%;
   width: 100%;
   background: black;
+  -webkit-animation: scale-up-center  0.25s cubic-bezier(0.390, 0.575, 1, 1.000) both;
+    animation: scale-up-center  0.25s cubic-bezier(0.390, 0.575, 1, 1.000) both;
 }
 
 .home-body 
