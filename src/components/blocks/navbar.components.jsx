@@ -1,9 +1,9 @@
+import 'assets/global.assets.css';
 import 'assets/blocks/navbar.assets.css';
 import 'assets/blocks/mobile/navbar.assets.css'
-import 'assets/global.assets.css';
 import React from "react";
 import Logo from 'assets/img/crest-icon.png'
-import LogoName from 'assets/img/crest-name.png'
+import LogoName from 'assets/img/crest-name.svg'
 import Web3 from 'web3'
 // import Web3ContextProvider from 'components/pages/test2';
 import { ethers } from 'ethers'
@@ -72,22 +72,13 @@ class Navbar extends React.Component
         const newProvider = new ethers.providers.Web3Provider(instance);
         const chainId = (await newProvider.getNetwork()).chainId
 
-        if (chainId == network.chainId) 
-        {
-          let axiosRequest = new AxiosRequest()
-          this.state.provider = newProvider
-          this.state.address = await newProvider.getSigner().getAddress()
-          this.state.isLoggedIn = true
+        let axiosRequest = new AxiosRequest()
+        this.state.provider = newProvider
+        this.state.address = await newProvider.getSigner().getAddress()
+        this.state.isLoggedIn = true
 
-          await axiosRequest.sendAddress(this.state.address)
-          this.props.loginAction({address : this.state.address, action: "address"})
-          
-
-        }else 
-        {
-          Notiflix.Notify.failure(
-          "Required Network - " + network.chainName, { timeout: 2500, width: '300px', position: 'right-top' });
-        }
+        await axiosRequest.sendAddress(this.state.address)
+        this.props.loginAction({address : this.state.address, action: "address"})
 
       }else if (window.web3) window.web3 = new Web3(window.web3.currentProvider)
       else window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
@@ -117,7 +108,7 @@ class Navbar extends React.Component
         <div className="navbar-button flex row">
             {
               this.state.address !== null
-              ?<div className="navbar-address-core flex row center"><p className='navbar-address'>{this.state.address}</p></div>
+              ?<div className="navbar-address-core flex row center"><p className='navbar-address'>{this.state.address.substr(0, 6) + '...' +  this.state.address.substr( this.state.address.length - 6,  this.state.address.length)}</p></div>
               :<button className="button dapp-button flex row center" onClick={() => this.connectWallet()}> <p>Connect Wallet</p> </button>
             }
         </div>

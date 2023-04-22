@@ -1,13 +1,24 @@
 @media only screen and (max-width: 660px) 
 {
-  .navbar-logo-core { height: 30%; width: auto;}
-
-  .logo-crest { height: 100%; width: auto; }
   .title-crest { width: 0; }
   .navbar-title { position: absolute; width: 0;}
   .navbar-button{ width: 70%;}
-  .dapp-button{ width: 70%;}
+  .dapp-button{ width: 50%;}
   .dapp-button { font-size: 12px }
   .navbar-address-core{ width: 100%;}
   .navbar-address{ font-size: 12px; }
+}
+
+@media only screen and (max-width: 850px) and (min-width: 661px) 
+{
+  .dapp-button{ width: 60%;}
+  .dapp-button { font-size: 16px }
+  .navbar-address{ font-size: 16px; }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 851px) 
+{
+  .dapp-button{ width: 50%;}
+  .dapp-button { font-size: 16px }
+  .navbar-address{ font-size: 16px; }
 }

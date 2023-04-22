@@ -28,13 +28,14 @@
 
 .home-body-card
 {
-  height: 50%;
-  width: 50%;
+  height: 80%;
+  width: 80%;
   align-items: center;
   align-content: center;
   color: white;
   font-family: "Infos";
   justify-content: center;
+  gap: 2em;
 }
 
 /* .home-body-card > * 
@@ -54,17 +55,19 @@
 
 .home-title
 {
-  height: 50%;
   width: 90%;
-  font-size: 60px;
+  font-size: 90px;
   text-align: start;
   font-weight: 800;
   text-align: center;
   margin: 0;
 }
 
+.home-title-p2 { font-size: 70px; }
+
 .home-description
 {
+  color: #ACACAC;
   height: 10%;
   width: 80%;
   font-size: 30px;
@@ -75,15 +78,11 @@
 
 }
 
-.home-button-core
-{
-  height: 30%;
-  width: 80%; 
-}
+.home-button-core { width: 80%; }
 .home-button 
 { 
-  height: 80%;
-  width: 40%;
+  height: 70px;
+  width: 300px;
   border: 0px !important;
   background: rgba(0,0,0,0.0) !important;
   border: 0;
@@ -93,7 +92,7 @@
   background-size: 100% 2px !important;
   background-position: 0 0, 0 100% !important;
   background-repeat: no-repeat !important;
-  border-radius: 22px !important;
+  border-radius: 10px !important;
   color: white;
   align-content: center;
   font-weight: 900 !important;

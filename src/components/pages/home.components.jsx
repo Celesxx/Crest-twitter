@@ -5,15 +5,15 @@ import 'assets/global.assets.css';
 import React from "react";
 import Navbar from "components/blocks/navbar.components.jsx"
 import Sphere from "assets/img/sphere.svg"
-import { LoginActions } from 'store/actions/login.actions.js'
-import { connect } from 'react-redux'
 import Web3 from 'web3'
-import { ethers } from 'ethers'
 import Notiflix from 'notiflix';
 import Web3Modal from 'web3modal'
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import network from 'contract/network.contract.js'
 import AxiosRequest from 'request/axios.request.js' 
+import { LoginActions } from 'store/actions/login.actions.js'
+import { connect } from 'react-redux'
+import { ethers } from 'ethers'
 
 const MapStateToProps = (state) => 
 {
@@ -37,7 +37,7 @@ class Index extends React.Component
         address: this.props.address,
         tweeted : this.props.tweeted,
         isMetamaskSupported: false,
-        textTweet: "Just submitted my WL request to @playCrest, let's !pray 🤲 $CREST"
+        textTweet: "Just submitted my WL request to @playCrest.%0ACan't wait!🤲 %0A$CREST %23ETH %23RealYield %23DeFi"
       };
   }
 
@@ -119,24 +119,29 @@ class Index extends React.Component
                 this.state.tweeted == false ?
                 (
                   <div className="home-body-card flex column">
-                    <h1 className="home-title"><span className="gradient-crest">DEAR VISITOR,</span> INTERACT WITH THIS AND GET WAITLIST ACCESS</h1>
-                    <p className="home-description">CONNECT WALLET {"->"} CLICK ON BUTTON {"->"} RETWEET</p>
-                    <div className="home-button-core flex row center">
-                    {
-                      this.state.address !== null 
-                      ? <button className="home-button flex row center" onClick={() => this.sendMessageTwitter()}>Access to the whitelist</button>
-                      :<button className="home-button flex row center" onClick={() => this.connectWallet()}> <p>Connect Wallet</p> </button>
-                    }
+
+                      <h1 className="home-title"><span className="gradient-crest">Welcome Collector</span></h1>
+                      <div className="home-winner-bar-short"></div>
+                      <h1 className="home-title home-title-p2">Connect your wallet and start your journey for a chance to win a limited <span className="gradient-orange">Maven</span> role</h1>
+                      <div className="home-winner-bar-short"></div>
+                      <p className="home-description flex center">CONNECT WALLET {"->"} CLICK ON BUTTON {"->"} RETWEET</p>
+                      <div className="home-button-core flex row center">
+                      {
+                        this.state.address !== null 
+                        ? <button className="home-button flex row center" onClick={() => this.sendMessageTwitter()}>Access to the waitlist</button>
+                        :<button className="home-button flex row center" onClick={() => this.connectWallet()}> <p>Connect Wallet</p> </button>
+                      }
                     </div>
+
                   </div>
 
                 ):(
                   <div className="home-body-card-winner flex column">
-                    <h1 className="home-title-winner"><span className="gradient-crest">CONGRATULATIONS</span> DEAR COLLECTOR</h1>
+                    <h1 className="home-title-winner"><span className="gradient-crest">CONGRATULATIONS</span> COLLECTOR</h1>
                     <div className="home-winner-bar-large"></div>
-                    <p className="home-description-winner">You are now on the waitin list to become a <span className="gradient-orange">Maven</span></p>
+                    <p className="home-description-winner">You are now on the waitlist with a chance to become a <span className="gradient-orange">Maven</span></p>
                     <div className="home-winner-bar-short"></div>
-                    <p className="home-description2">Retweet, like and comment under our tweets to have higher chance to be seen by and admin</p>
+                    <p className="home-description2">Retweet, Like, and comment on our tweets to improve your odds of being selected and winning the coveted maven role</p>
                   </div>
                 )
               }

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7c745df7.css",
+    "main.js": "/static/js/main.da21080e.js",
+    "static/js/787.167b270c.chunk.js": "/static/js/787.167b270c.chunk.js",
+    "static/media/crest-loading.mp4": "/static/media/crest-loading.fbd146b2640954ff91de.mp4",
+    "static/media/Inter-Regular.ttf": "/static/media/Inter-Regular.fd272b9e3ca9b73890cb.ttf",
+    "static/media/sphere.svg": "/static/media/sphere.88f682b19693cff96e2f32cbd7f10bd4.svg",
+    "static/media/crest-name.svg": "/static/media/crest-name.d415b84b28709b71793286e0026a6391.svg",
+    "index.html": "/index.html",
+    "main.7c745df7.css.map": "/static/css/main.7c745df7.css.map",
+    "main.da21080e.js.map": "/static/js/main.da21080e.js.map",
+    "787.167b270c.chunk.js.map": "/static/js/787.167b270c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c745df7.css",
+    "static/js/main.da21080e.js"
+  ]
+}
